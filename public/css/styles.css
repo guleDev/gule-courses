@@ -1,0 +1,26 @@
+* {
+    font-family: "Roboto";
+}
+
+body{
+    background-color: #394645;
+}
+
+main{
+    padding: 15px;
+}
+
+h1, p{
+    color: #BFBFBF;
+}
+
+#nav{
+    background-color: #1aa179;
+}
+
+#navbar #logo{
+    margin-left: 6px;
+    border-radius: 10px;
+    width: 80px;
+}
+
