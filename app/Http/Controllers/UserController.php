@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Module;
+use App\Models\Content;
 
 class UserController extends Controller
 {
     public function index() {
 
-        $users = User::all();
+        $user = User::orderBy('purchasedCourses', 'asc')->get();
+        $course = Course::orderBy('id', 'asc')->get();
+        $courseIDs = $course->pluck('id');
+        $module = Module::whereIn('courseID', $courseIDs)->get();
+        $content = '';
 
-        return view('reports', ['users' => $users]);    
+        return view('/reports', ['users' => $user, 'courses' => $course, 'modules' => $module, 'contents' => $content]);    
     }
 }

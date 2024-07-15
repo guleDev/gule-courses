@@ -10,6 +10,13 @@ class Course extends Model
     use HasFactory;
 
     protected $casts = [
-        'purchased' => 'array'
+        'purchased' => 'array',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+    public function modules(){
+        return $this->hasMany('App\Models\Module');
+    }
 }

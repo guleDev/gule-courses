@@ -6,6 +6,11 @@
 
     <h1>Gule Courses</h1>
 
+    <form action="/courses" method="GET">
+        <input type="text" name="search" id="search" class="form-contrl" placeholder="Search">
+        <input type="submit" class="btn btn-primary" value="Search">
+    </form>
+
     <div class="courses row" style="gap: 15px; margin: 15px;">
         @foreach($courses as $course)
         <div class="card col-sm-2" style="background-color:#4C5958; padding:0; border:2px solid #6a6d6d;">

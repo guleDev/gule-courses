@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContentController;
 
 Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/courses/create', [CourseController::class, 'create']);
 Route::get('/courses/{uniqueCode}', [CourseController::class, 'show']);
-Route::post('/courses', [CourseController::class, 'store']);
+
+Route::get('/reports', [ModuleController::class, 'countModules']);
 
 Route::get('/reports', [UserController::class, 'index']);
 
-/* Create a course search route */
+/* Create home route */
 Route::get('/', function () {
     return view('welcome');
 });
